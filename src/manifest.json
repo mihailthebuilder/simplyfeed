@@ -1,0 +1,45 @@
+{
+  "name": "SimplyFeed - LinkedIn Feed Filter",
+  "description": "Filter out liked and promoted posts from your LinkedIn feed!",
+  "version": "0.0.0.3",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+  "permissions": ["webNavigation", "storage"],
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "active-16.png",
+      "32": "active-32.png",
+      "64": "active-64.png",
+      "128": "active-128.png"
+    }
+  },
+  "icons": {
+    "16": "active-16.png",
+    "32": "active-32.png",
+    "64": "active-64.png",
+    "128": "active-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["contentScript.bundle.js"],
+      "css": ["content.styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    "content.styles.css",
+    "active-128.png",
+    "active-32.png"
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+}
