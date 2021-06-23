@@ -6,3 +6,14 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 
 - [SimplyFeed](#simplyfeed)
 - [Table of contents](#table-of-contents)
+- [Features](#features)
+- [Developing locally](#developing-locally)
+- [Other](#other)
+
+# Features
+
+# Developing locally
+
+# Other
+
+mention tests
