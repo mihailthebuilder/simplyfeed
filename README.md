@@ -1,6 +1,6 @@
 # SimplyFeed
 
-Browser extension that filters posts in LinkedIn feed. Works on Chrome and Firefox.
+Browser extension that filters liked and promoted posts in your LinkedIn feed. Works on Chrome and Firefox.
 
 # Table of contents
 
