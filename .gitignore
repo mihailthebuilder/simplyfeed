@@ -1,0 +1,27 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# temporary while need to fix test
+test
+jest.config.js
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/web-ext-artifacts
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.history
+.vscode
+
+# secrets
+secrets.*.js
