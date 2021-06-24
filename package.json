@@ -7,8 +7,8 @@
     "url": "https://github.com/mihailthebuilder/simplyfeed.git"
   },
   "scripts": {
-    "build": "node utils/build.js",
-    "firefox:build": "web-ext build --source-dir ./build/ --overwrite-dest",
+    "prebuild": "node utils/build.js",
+    "build": "web-ext build --source-dir ./build/ --overwrite-dest",
     "start": "NOT WORKING node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,css,html}'",
     "test": "jest",
