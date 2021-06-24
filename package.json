@@ -9,10 +9,11 @@
   "scripts": {
     "prebuild": "node utils/build.js",
     "build": "web-ext build --source-dir ./build/ --overwrite-dest",
-    "start": "NOT WORKING node utils/webserver.js",
-    "prettier": "prettier --write '**/*.{js,jsx,css,html}'",
+    "pretest": "npm run build",
     "test": "jest",
-    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "prettier": "prettier --write '**/*.{js,jsx,css,html}'",
+    "start": "NOT WORKING node utils/webserver.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
