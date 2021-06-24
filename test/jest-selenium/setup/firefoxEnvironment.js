@@ -1,3 +1,5 @@
+// NOT IN USE
+
 /* sources of inspiration: 
 https://jestjs.io/docs/configuration
 https://github.com/alexeyraspopov/jest-webdriver/blob/master/packages/jest-environment-webdriver/modules/WebDriverEnvironment.js
