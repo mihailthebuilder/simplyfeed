@@ -62,6 +62,10 @@ You'll notice that the tests have the browser go to the actual LinkedIn site; a 
 
 I think it has something to do with the fact that the `chrome.webNavigation.onHistoryStateUpdated` callback in [helpers.js](src/pages/Background/modules/helpers.js) doesn't get activated when you go to the mock page. The callback sits in the [background scripts](src/pages/Background) and sends an alert to the content scripts which, in turn, triggers the filtering. The reason I didn't just put the trigger in the content scripts is because it sometimes misses out when you go to the LinkedIn feed.
 
+The next major difficulty was having the Selenium-driven browsers log onto the live LinkedIn site. I got this to work on Firefox by starting every browser instance with a specific profile that was already logged in. Unfortunately that's [not possible ](https://stackoverflow.com/a/34737733/7874516) with Chrome; the only alternative would've been to read the username and password from a file that sits outside of the repository - needless to say how insecure that would've been :)
+
+The final problem was the huge amount of time it takes to fully load a LinkedIn page; I had to extend the timeout for Jest to 20 minutes :D. Even then, the tests would throw false negatives because the website is very volatile.
+
 # Other
 
 This is separate from the original version because had sensitive info.
