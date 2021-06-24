@@ -34,7 +34,7 @@ That's it! You can now develop the extension...
 - `npm build` creates the unpacked files in the `build` folder for manually testing the extension as per point 4 above; it also packages the extension in `web-ext-artifcats` so you can submit it to the listings.
 - `npm test` runs the [automated tests](#automated-tests)
 
-Some useful resources:
+Very helpful resources:
 
 - https://www.selenium.dev/documentation/en/
 - https://www.selenium.dev/selenium/docs/api/javascript/
