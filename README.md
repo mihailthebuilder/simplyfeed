@@ -7,8 +7,8 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [SimplyFeed](#simplyfeed)
 - [Table of contents](#table-of-contents)
 - [Features](#features)
-- [Setting up the development environment](#setting-up-the-development-environment)
-- [Developing locally](#developing-locally)
+  - [Automated tests](#automated-tests)
+- [How to develop the extension](#how-to-develop-the-extension)
 - [To do](#to-do)
   - [Firefox tests](#firefox-tests)
   - [Content script test](#content-script-test)
@@ -16,17 +16,29 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 
 # Features
 
-# Setting up the development environment
+## Automated tests
 
-Run `npm install`
+# How to develop the extension
 
-# Developing locally
+Follow these steps to set up your development environment:
 
-Follow these steps if you want to
+1. Run `npm install`
+2. Install [chromedriver](https://chromedriver.chromium.org/)
+3. Run `npm build`
+4. Load the unpacked extension in the newly-created `build` folder with your Chrome browser; here's [a guide](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/)
+5. Copy the extension ID from the loaded extension; here's [a guide](https://stackoverflow.com/questions/8946325/chrome-extension-id-how-to-find-it)
+6. Open up [environmentSettings.json](/test/setup/environmentSettings.json) and update `environments.chrome.internalExtensionId` with the extension ID that's generated the first time you
 
-1. Run `npm install` (only the first time you create the extension locally).
-2. Run `NODE_ENV=production npm run build` to create the build files.
-3. Run `npm run firefox:build` to archive it with the [web-ext](https://www.npmjs.com/package/web-ext) package.
+That's it! You can now develop the extension...
+
+- `npm build` creates the unpacked files in the `build` folder for manually testing the extension as per point 4 above; it also packages the extension in `web-ext-artifcats` so you can submit it to the listings.
+- `npm test` runs the [automated tests](#automated-tests)
+
+Some useful resources:
+
+- https://www.selenium.dev/documentation/en/
+- https://www.selenium.dev/selenium/docs/api/javascript/
+- https://developer.chrome.com/
 
 # To do
 
