@@ -9,12 +9,10 @@ import {
   listenStorageChanges,
   setUninstallURL,
 } from './modules/helpers.js';
-import { trackEvent, checkDayChanged } from './modules/helpers.js';
+import { checkDayChanged } from './modules/helpers.js';
 
 // works every time you install/update the extension
 chrome.runtime.onInstalled.addListener(() => {
-  trackEvent('extensionInstalled');
-
   storageInit();
 
   setUninstallURL();

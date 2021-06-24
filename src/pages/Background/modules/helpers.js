@@ -23,8 +23,6 @@ export const listenLinkedinPage = () => {
     function () {
       console.log('BG-linkedin identified');
 
-      trackEvent('linkedinActivated');
-
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const lastTabId = tabs[0].id;
         chrome.tabs.sendMessage(lastTabId, 'Background page started.');
@@ -72,14 +70,7 @@ export const listenStorageChanges = () => {
 };
 
 export const setUninstallURL = () => {
-  chrome.runtime.setUninstallURL('https://forms.gle/tkLmUUVkoZxGSH9T7', () => {
-    trackEvent('extensionRemoved');
-  });
-};
-
-export const trackEvent = (eventName) => {
-  // eslint-disable-next-line no-undef
-  _gaq.push(['_trackEvent', eventName, 'true']);
+  chrome.runtime.setUninstallURL('https://forms.gle/tkLmUUVkoZxGSH9T7');
 };
 
 export const checkDayChanged = () => {
