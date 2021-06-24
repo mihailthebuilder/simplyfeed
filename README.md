@@ -24,14 +24,14 @@ Follow these steps to set up your development environment:
 
 1. Run `npm install`
 2. Install [chromedriver](https://chromedriver.chromium.org/)
-3. Run `npm build`
+3. Run `npm run build`
 4. Load the unpacked extension in the newly-created `build` folder with your Chrome browser; here's [a guide](https://webkul.com/blog/how-to-install-the-unpacked-extension-in-chrome/)
 5. Copy the extension ID from the loaded extension; here's [a guide](https://stackoverflow.com/questions/8946325/chrome-extension-id-how-to-find-it)
 6. Open up [environmentSettings.json](/test/setup/environmentSettings.json) and update `environments.chrome.internalExtensionId` with the extension ID that's generated the first time you
 
 That's it! You can now develop the extension...
 
-- `npm build` creates the unpacked files in the `build` folder for manually testing the extension as per point 4 above; it also packages the extension in `web-ext-artifcats` so you can submit it to the listings.
+- `npm run build` creates the unpacked files in the `build` folder for manually testing the extension as per point 4 above; it also packages the extension in `web-ext-artifcats` so you can submit it to the listings.
 - `npm test` runs the [automated tests](#automated-tests)
 
 Very helpful resources:
