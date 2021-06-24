@@ -18,9 +18,7 @@ Follow these steps if you want to
 
 1. Run `npm install` (only the first time you create the extension locally).
 2. Run `NODE_ENV=production npm run build` to create the build files.
-3. Go to `background.html` in the newly-created `build` folder (red boxes). Change the `src` value of the first `<script>` to the name of the file highlighted in the yellow box. (This file contains the Google Analytics code and, for some reason, I couldn't get it to work well with the webpack setup. I didn't spend too much time either, felt it wasn't worth the effort.)
-   ![Google Analytics code rename](readme/ga_rename.png)
-4. Run `npm run firefox:build` to archive it with the [web-ext](https://www.npmjs.com/package/web-ext) package.
+3. Run `npm run firefox:build` to archive it with the [web-ext](https://www.npmjs.com/package/web-ext) package.
 
 # Other
 
