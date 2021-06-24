@@ -1,0 +1,12 @@
+{
+  "environments": {
+    "chrome": {
+      "internalExtensionId": ""
+    },
+    "firefox": {
+      "binary": "",
+      "profile": "",
+      "internalExtensionId": ""
+    }
+  }
+}

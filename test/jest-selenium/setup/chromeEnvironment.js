@@ -8,7 +8,7 @@ https://github.com/applitools/jest-environment-selenium/blob/master/src/index.js
 const TemplateEnvironment = require('./templateEnvironment.js');
 const { Builder } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const settings = require('../../../utils/settings.js');
+const settings = require('./settings.js');
 
 const createChromeDriver = async () => {
   // specify the extension to load

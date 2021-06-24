@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const settingsPath = "../private/simplyfeed/settings.json";
+const settingsPath = './test/jest-selenium/setup/environmentSettings.json';
 const rawData = fs.readFileSync(settingsPath);
 const settings = JSON.parse(rawData);
 
