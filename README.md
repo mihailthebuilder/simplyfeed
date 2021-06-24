@@ -12,7 +12,6 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [To do](#to-do)
   - [Firefox tests](#firefox-tests)
   - [Content script test](#content-script-test)
-    - [Sourcing the content that's tested](#sourcing-the-content-thats-tested)
 - [Other](#other)
 
 # Features
@@ -59,9 +58,9 @@ I previously managed to automate the testing of the extension with Firefox. The 
 
 The `content.js` and `contentTest.js` files refer to several automated tests I set up for the content script which used to work. I encountered several challenges when open-sourcing these files, however, which eventually led me to set them aside.
 
-You'll notice that the tests have the browser go to the actual LinkedIn site; a huge no-no as you shouldn't be incorporating external dependencies. I tried avoiding this by running the tests on a mock HTML page (i.e. downloading the LinkedIn feed page for my account). But the content scripts wouldn't get activated for some reason. The issue doesn't lie with the trigger in `manifest.json`, which I managed to get to work by adding `"file:///*/linkedin_mock.html"` (the name of my mock HTML page) to `content_scripts.matches`. I think it has something to do with the fact that the `listenLinkedInPage` in [helpers.js](src/pages/Background/modules/helpers.js) doesn't get triggered.
+You'll notice that the tests have the browser go to the actual LinkedIn site; a huge no-no as you shouldn't be incorporating external dependencies. I tried avoiding this by running the tests on a mock HTML page (i.e. downloading the LinkedIn feed page for my account). But the content scripts wouldn't get activated for some reason. The issue doesn't lie with the trigger in `manifest.json`, which I managed to get to work by adding `"file:///*/linkedin_mock.html"` (the name of my mock HTML page) to `content_scripts.matches`.
 
-### Sourcing the content that's tested
+I think it has something to do with the fact that the `chrome.webNavigation.onHistoryStateUpdated` callback in [helpers.js](src/pages/Background/modules/helpers.js) doesn't get activated when you go to the mock page. The callback sits in the [background scripts](src/pages/Background) and sends an alert to the content scripts which, in turn, triggers the filtering. The reason I didn't just put the trigger in the content scripts is because it sometimes misses out when you go to the LinkedIn feed.
 
 # Other
 
