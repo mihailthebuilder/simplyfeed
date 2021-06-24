@@ -36,9 +36,9 @@ Follow these steps if you want to
 I previously managed to automate the testing of the extension with Firefox. The tests don't work anymore, I think it has something to do with a recent Firefox update. Here's the steps I took to make it work in the past:
 
 1. Install `geckodriver`.
-2. Install [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) using [this guide](https://medium.com/@js_debugger/how-to-install-firefox-developer-edition-on-ubuntu-1c7f5f2b6883). If you don't follow the guide, make sure you set `options.setProfile` in [firefoxEnvironment.js](test/jest-selenium/setup/firefoxEnvironment.js) to the path for Firefox Developer Edition's executable.
+2. Install [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) using [this guide](https://medium.com/@js_debugger/how-to-install-firefox-developer-edition-on-ubuntu-1c7f5f2b6883). If you don't follow the guide, make sure you set `options.setProfile` in [firefoxEnvironment.js](test/setup/firefoxEnvironment.js) to the path for Firefox Developer Edition's executable.
 3. Disable signature checking for add-ons in the Firefox Developer Edition installation. [Here's](https://stackoverflow.com/a/31952728) how you do it.
-4. Update the following values in [firefoxEnvironment.js](test/jest-selenium/setup/firefoxEnvironment.js)...
+4. Update the following values in [firefoxEnvironment.js](test/setup/firefoxEnvironment.js)...
    1. `internalExtensionId` - see how it was done for Chrome
    2. `options.setBinary` - location of the Firefox Developer Edition executable
    3. `options.setProfile` - the folder name in `~/.mozilla/firefox` that ends in `.dev-edition-default`. This folder holds the default profile for your Firefox Developer Edition Installation.
