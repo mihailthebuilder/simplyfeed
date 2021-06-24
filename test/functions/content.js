@@ -5,8 +5,8 @@ import { JSDOM } from 'jsdom';
 import {
   postsSelector,
   postInFilter,
-} from '../../../src/pages/Content/modules/helpers.js';
-import settings from '../../../utils/settings.js';
+} from '../../src/pages/Content/modules/helpers.js';
+import settings from '../../utils/settings.js';
 
 let driver;
 

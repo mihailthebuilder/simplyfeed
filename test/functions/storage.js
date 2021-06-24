@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { dateToInputValue } from '../../../src/pages/Background/modules/helpers.js';
+import { dateToInputValue } from '../../src/pages/Background/modules/helpers.js';
 
 let driver;
 

@@ -2,7 +2,7 @@ module.exports = {
   projects: [
     {
       displayName: 'chrome',
-      testEnvironment: './test/jest-selenium/setup/chromeEnvironment.js',
+      testEnvironment: './test/setup/chromeEnvironment.js',
       slowTestThreshold: 100,
     },
     /* not working anymore

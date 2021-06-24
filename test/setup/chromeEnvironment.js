@@ -13,7 +13,7 @@ const settings = require('./settings.js');
 const createChromeDriver = async () => {
   // specify the extension to load
   let options = new chrome.Options();
-  const extensionPath = require('path').join(__dirname, '../../../build');
+  const extensionPath = require('path').join(__dirname, '../../build');
   options.addArguments('--load-extension=' + extensionPath);
 
   let builder = await new Builder()
