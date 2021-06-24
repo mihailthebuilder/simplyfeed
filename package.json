@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node utils/build.js",
     "firefox:build": "web-ext build --source-dir ./build/ --overwrite-dest",
-    "start": "node utils/webserver.js",
+    "start": "NOT WORKING node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,css,html}'",
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
