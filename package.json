@@ -11,8 +11,8 @@
     "firefox:build": "web-ext build --source-dir ./build/ --overwrite-dest",
     "start": "node utils/webserver.js",
     "prettier": "prettier --write '**/*.{js,jsx,css,html}'",
-    "jest": "jest",
-    "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
+    "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
