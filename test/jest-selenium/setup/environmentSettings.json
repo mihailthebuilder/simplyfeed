@@ -2,6 +2,11 @@
   "environments": {
     "chrome": {
       "internalExtensionId": "chengkipncafccmpeoigbmoicmmpbbkd"
+    },
+    "firefox": {
+      "binary": "",
+      "profile": "",
+      "internalExtensionId": ""
     }
   }
 }
