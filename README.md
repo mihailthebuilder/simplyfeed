@@ -11,7 +11,7 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [How to develop the extension](#how-to-develop-the-extension)
 - [To do](#to-do)
   - [Firefox tests](#firefox-tests)
-  - [Content script test](#content-script-test)
+  - [Content script tests](#content-script-tests)
 - [Other](#other)
 
 # Features
@@ -66,7 +66,7 @@ I previously managed to automate the testing of the extension with Firefox. The 
    ```
 6. Uncomment the Firefox-related key-value pair in [jest.config.js](jest.config.js)
 
-## Content script test
+## Content script tests
 
 The `content.js` and `contentTest.js` files refer to several automated tests I set up for the content script which used to work. I encountered several challenges when open-sourcing these files, however, which eventually led me to set them aside.
 
