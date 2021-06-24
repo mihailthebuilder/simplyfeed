@@ -34,6 +34,5 @@
     "active-128.png",
     "active-32.png"
   ],
-  "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'"
+  "manifest_version": 2
 }
