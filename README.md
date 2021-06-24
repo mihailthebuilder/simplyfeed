@@ -11,7 +11,7 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [Developing locally](#developing-locally)
 - [Other](#other)
 - [To do](#to-do)
-  - [Firefox test](#firefox-test)
+  - [Firefox tests](#firefox-tests)
   - [Content script test](#content-script-test)
 
 # Features
@@ -34,7 +34,7 @@ mention tests
 
 # To do
 
-## Firefox test
+## Firefox tests
 
 I previously managed to automate the testing of the extension with Firefox. The tests don't work anymore, I think it has something to do with a recent Firefox update. Here's the steps I took to make it work in the past:
 
