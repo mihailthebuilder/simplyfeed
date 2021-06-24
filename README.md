@@ -9,10 +9,10 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [Features](#features)
 - [Setting up the development environment](#setting-up-the-development-environment)
 - [Developing locally](#developing-locally)
-- [Other](#other)
 - [To do](#to-do)
   - [Firefox tests](#firefox-tests)
   - [Content script test](#content-script-test)
+- [Other](#other)
 
 # Features
 
@@ -27,10 +27,6 @@ Follow these steps if you want to
 1. Run `npm install` (only the first time you create the extension locally).
 2. Run `NODE_ENV=production npm run build` to create the build files.
 3. Run `npm run firefox:build` to archive it with the [web-ext](https://www.npmjs.com/package/web-ext) package.
-
-# Other
-
-mention tests
 
 # To do
 
@@ -59,3 +55,9 @@ I previously managed to automate the testing of the extension with Firefox. The 
 6. Uncomment the Firefox-related key-value pair in [jest.config.js](jest.config.js)
 
 ## Content script test
+
+# Other
+
+This is separate from the original version because had sensitive info.
+
+Might be sometimes out of sync with what's in the Chrome Web Store / Firefox Add-ons. This will happen when I make changes that don't have bearing to the extension's functionality (e.g. tests) and I can't be bothered to go through the process of updating the extension listings.
