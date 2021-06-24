@@ -80,6 +80,4 @@ The final problem was the huge amount of time it takes to fully load a LinkedIn 
 
 # Other
 
-This is separate from the original version because had sensitive info.
-
 Might be sometimes out of sync with what's in the Chrome Web Store / Firefox Add-ons. This will happen when I make changes that don't have bearing to the extension's functionality (e.g. tests) and I can't be bothered to go through the process of updating the extension listings.
