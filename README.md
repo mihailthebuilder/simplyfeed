@@ -2,10 +2,13 @@
 
 Browser extension that filters liked and promoted posts in your LinkedIn feed. Available for download from the [Chrome Web Store](https://chrome.google.com/webstore/detail/simplyfeed-linkedin-feed/hpjgkdecioodgjhhdoagefbbdlljkpic) and [Firefox Browser Add-Ons](https://addons.mozilla.org/en-GB/firefox/addon/simplyfeed-linkedin-filter/).
 
+![main image](readme/main_image.jpg)
+
 # Table of contents
 
 - [SimplyFeed](#simplyfeed)
 - [Table of contents](#table-of-contents)
+- [Architecture](#architecture)
 - [Features](#features)
   - [Activation triggers](#activation-triggers)
   - [Filters](#filters)
@@ -22,6 +25,10 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
   - [Firefox tests](#firefox-tests)
   - [Content script tests](#content-script-tests)
 - [Other](#other)
+
+# Architecture
+
+The extension is made in React...'nuff said!
 
 # Features
 
@@ -49,6 +56,10 @@ These are identified by the `[data-control-name='actor']` selector that contains
 Every time a post is removed, its contents are logged in the console: ![console logs](readme/console_logs.jpg)
 
 ## Pop-up
+
+![popup](readme/popup.png)
+
+The pop-up has 2 important pieces
 
 ## Empty feed fallback
 
