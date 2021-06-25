@@ -68,6 +68,8 @@ The data is stored in the browser using the [storage API](https://developer.chro
 
 ## Empty feed fallback
 
+Once all posts are removed, we check whether there are any posts left in the feed. If there aren't, then the extension makes the browser scroll to the bottom of the page and back up to load new posts. The final part of the `removePosts` function in [helpers.js](src/pages/Content/modules/helpers.js) contains this action.
+
 ## Badge
 
 ## Uninstall URL
