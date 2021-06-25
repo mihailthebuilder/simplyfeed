@@ -72,6 +72,10 @@ Once all posts are removed, we check whether there are any posts left in the fee
 
 ## Badge
 
+![badge](readme/badge.png)
+
+The extension has a badge which shows the number of posts that have been removed today. The background color and number are set using the [setBadgeBackgroundColor](https://developer.chrome.com/docs/extensions/reference/browserAction/#method-setBadgeBackgroundColor) and [setBadgeText](https://developer.chrome.com/docs/extensions/reference/browserAction/#method-setBadgeText) APIs, respectively.
+
 ## Uninstall URL
 
 ## Automated tests
