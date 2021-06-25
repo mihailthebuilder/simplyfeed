@@ -9,6 +9,8 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [Features](#features)
   - [Activation triggers](#activation-triggers)
   - [Filters](#filters)
+    - [Reaction posts](#reaction-posts)
+    - [Promoted posts](#promoted-posts)
   - [Logging](#logging)
   - [Pop-up](#pop-up)
   - [Empty feed fallback](#empty-feed-fallback)
@@ -31,6 +33,16 @@ The extension only starts running when the user opens up the `linkedin.com/feed`
 2. The `chrome.webNavigation.onHistoryStateUpdated` listener in [helpers.js](src/pages/Background/modules/helpers.js), which sends a [message ](https://developer.chrome.com/docs/extensions/mv2/messaging/) to the content script to activate. The reason I needed to add this one is because LinkedIn updates pages dynamically, which means that (1) will sometimes miss out when you navigate to the feed from another page on LinkedIn's website. [See this](https://stackoverflow.com/questions/49665031/content-script-only-loading-on-reload-refresh) for an explanation.
 
 ## Filters
+
+The extension removes 2 types of posts from your feed.
+
+### Reaction posts
+
+These are posts shown in your feed because someone in your network [reacted](https://www.linkedin.com/help/linkedin/answer/101466/use-linkedin-reactions?lang=en) to it. They're identified by the `.feed-shared-header` selector that contains one of the reaction words (e.g. "likes"): ![reaction posts filter](readme/reaction_posts_filter.png)
+
+### Promoted posts
+
+These are identified by the `[data-control-name='actor']` selector that contains the "Promoted" word: ![promoted posts filter](readme/promoted_posts_filter.png).
 
 ## Logging
 
