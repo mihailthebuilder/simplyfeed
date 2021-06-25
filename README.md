@@ -59,7 +59,12 @@ Every time a post is removed, its contents are logged in the console: ![console 
 
 ![popup](readme/popup.png)
 
-The pop-up has 2 important pieces
+The pop-up has 2 important pieces:
+
+1. Switches to activate/deactivate either of the 2 types of filters.
+2. Stats section that records the total # of posts removed today and during the extension's lifetime.
+
+The data is stored in the browser using the [storage API](https://developer.chrome.com/docs/extensions/reference/storage/).
 
 ## Empty feed fallback
 
