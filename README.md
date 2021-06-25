@@ -7,12 +7,13 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 - [SimplyFeed](#simplyfeed)
 - [Table of contents](#table-of-contents)
 - [Features](#features)
+  - [Activation triggers](#activation-triggers)
   - [Filters](#filters)
   - [Logging](#logging)
   - [Pop-up](#pop-up)
-    - [Filter switches](#filter-switches)
-    - [Stats](#stats)
+  - [Empty feed fallback](#empty-feed-fallback)
   - [Badge](#badge)
+  - [Uninstall URL](#uninstall-url)
   - [Automated tests](#automated-tests)
 - [How to develop the extension](#how-to-develop-the-extension)
 - [To do](#to-do)
@@ -22,17 +23,24 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 
 # Features
 
+## Activation triggers
+
+The extension only starts running when the user opens up the `linkedin.com/feed` web page. There are 2 activation triggers:
+
+1. The `content_scripts.matches` value in [manifest.json](src/manifest.json) - this tells the extension when the content script should be triggered
+2. The `chrome.webNavigation.onHistoryStateUpdated` listener in [helpers.js](src/pages/Background/modules/helpers.js), which sends a [message ](https://developer.chrome.com/docs/extensions/mv2/messaging/) to the content script to activate. The reason I needed to add this one is because LinkedIn updates pages dynamically, which means that (1) will sometimes miss out when you navigate to the feed from another page on LinkedIn's website. [See this](https://stackoverflow.com/questions/49665031/content-script-only-loading-on-reload-refresh) for an explanation.
+
 ## Filters
 
 ## Logging
 
 ## Pop-up
 
-### Filter switches
-
-### Stats
+## Empty feed fallback
 
 ## Badge
+
+## Uninstall URL
 
 ## Automated tests
 
@@ -88,9 +96,7 @@ I previously managed to automate the testing of the extension with Firefox. The 
 
 The `content.js` and `contentTest.js` files refer to several automated tests I set up for the content script which used to work. I encountered several challenges when open-sourcing these files, however, which eventually led me to set them aside.
 
-You'll notice that the tests have the browser go to the actual LinkedIn site; a huge no-no as you shouldn't be incorporating external dependencies. I tried avoiding this by running the tests on a mock HTML page (i.e. downloading the LinkedIn feed page for my account). But the content scripts wouldn't get activated for some reason. The issue doesn't lie with the trigger in `manifest.json`, which I managed to get to work by adding `"file:///*/linkedin_mock.html"` (the name of my mock HTML page) to `content_scripts.matches`.
-
-I think it has something to do with the fact that the `chrome.webNavigation.onHistoryStateUpdated` callback in [helpers.js](src/pages/Background/modules/helpers.js) doesn't get activated when you go to the mock page. The callback sits in the [background scripts](src/pages/Background) and sends an alert to the content scripts which, in turn, triggers the filtering. The reason I didn't just put the trigger in the content scripts is because it sometimes misses out when you go to the LinkedIn feed.
+You'll notice that the tests have the browser go to the actual LinkedIn site; a huge no-no as you shouldn't be incorporating external dependencies. I tried avoiding this by running the tests on a mock HTML page (i.e. downloading the LinkedIn feed page for my account). But the content scripts wouldn't get activated for some reason. The issue doesn't lie with the trigger in `manifest.json`, which I managed to get to work by adding `"file:///*/linkedin_mock.html"` (the name of my mock HTML page) to `content_scripts.matches`. I think it has something to do with the fact that the [chrome.webNavigation.onHistoryStateUpdated listener](#activation-triggers) doesn't get activated when you go to the mock page.
 
 The next major difficulty was having the Selenium-driven browsers log onto the live LinkedIn site. I got this to work on Firefox by starting every browser instance with a specific profile that was already logged in. Unfortunately that's [not possible ](https://stackoverflow.com/a/34737733/7874516) with Chrome; the only alternative would've been to read the username and password from a file that sits outside of the repository - needless to say how insecure that would've been :)
 
