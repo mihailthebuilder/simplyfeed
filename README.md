@@ -33,7 +33,7 @@ The extension is made in React, with 4 main components that are in `src/pages`:
 - Backgroud - contains all the [background scripts](https://developer.chrome.com/docs/extensions/mv2/background_pages/)
 - Content - holds the [content scripts](https://developer.chrome.com/docs/extensions/mv2/content_scripts/)
 - Popup - has the code for the [extension popup](https://developer.chrome.com/docs/extensions/mv2/user_interface/#popup)
-- Test - page with several items which enable me to run some of the [automated tests](#automated-tests) on the extension
+- Test - enables me to run some of the [automated tests](#automated-tests) on the extension
 
 # Features
 
@@ -88,6 +88,17 @@ When the extension is uninstalled, it will redirect the user to a survey I set u
 ![redirect](readme/redirect.gif)
 
 ## Automated tests
+
+I've set up several integration tests for the badge, popup and background scripts using Jest and Selenium. I took a very broad-brush approach because it's incredibly difficult to run automated tests on browser extensions. Check out the [To do section](#to-do) to get a flavor of the challenges involved :)
+
+In `src/pages/Test`, I created a page that enables me to change data that I store in the browser (e.g. posts removed today). This page is hidden from users in the sense that it can only be accessed by going to the `chrome-extension://${extensionId}/test.html` URL.
+
+I can then check whether...
+
+- listeners to browser data changes (e.g.`listenStorageChanges` function) respond well
+- UI components (e.g. popup) render the correct data
+
+![hidden test](readme/hidden_test.gif)
 
 # How to develop the extension
 
