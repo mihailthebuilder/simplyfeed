@@ -11,7 +11,7 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
   - [Filters](#filters)
     - [Reaction posts](#reaction-posts)
     - [Promoted posts](#promoted-posts)
-  - [Logging](#logging)
+  - [Console logging](#console-logging)
   - [Pop-up](#pop-up)
   - [Empty feed fallback](#empty-feed-fallback)
   - [Badge](#badge)
@@ -42,9 +42,11 @@ These are posts shown in your feed because someone in your network [reacted](htt
 
 ### Promoted posts
 
-These are identified by the `[data-control-name='actor']` selector that contains the "Promoted" word: ![promoted posts filter](readme/promoted_posts_filter.png).
+These are identified by the `[data-control-name='actor']` selector that contains the "Promoted" word: ![promoted posts filter](readme/promoted_posts_filter.png)
 
-## Logging
+## Console logging
+
+Every time a post is removed, its contents are logged in the console: ![console logs](readme/console_logs.jpg)
 
 ## Pop-up
 
