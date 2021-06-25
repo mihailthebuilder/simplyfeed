@@ -28,7 +28,12 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
 
 # Architecture
 
-The extension is made in React...'nuff said!
+The extension is made in React, with 4 main components that are in `src/pages`:
+
+- Backgroud - contains all the [background scripts](https://developer.chrome.com/docs/extensions/mv2/background_pages/)
+- Content - holds the [content scripts](https://developer.chrome.com/docs/extensions/mv2/content_scripts/)
+- Popup - has the code for the [extension popup](https://developer.chrome.com/docs/extensions/mv2/user_interface/#popup)
+- Test - page with several items which enable me to run some of the [automated tests](#automated-tests) on the extension
 
 # Features
 
