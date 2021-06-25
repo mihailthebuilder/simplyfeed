@@ -18,7 +18,7 @@ Browser extension that filters liked and promoted posts in your LinkedIn feed. A
   - [Pop-up](#pop-up)
   - [Empty feed fallback](#empty-feed-fallback)
   - [Badge](#badge)
-  - [Uninstall URL](#uninstall-url)
+  - [Uninstall redirect](#uninstall-redirect)
   - [Automated tests](#automated-tests)
 - [How to develop the extension](#how-to-develop-the-extension)
 - [To do](#to-do)
@@ -76,7 +76,11 @@ Once all posts are removed, we check whether there are any posts left in the fee
 
 The extension has a badge which shows the number of posts that have been removed today. The background color and number are set using the [setBadgeBackgroundColor](https://developer.chrome.com/docs/extensions/reference/browserAction/#method-setBadgeBackgroundColor) and [setBadgeText](https://developer.chrome.com/docs/extensions/reference/browserAction/#method-setBadgeText) APIs, respectively.
 
-## Uninstall URL
+## Uninstall redirect
+
+When the extension is uninstalled, it will redirect the user to a survey I set up to gather feedback. This was done using the [setUninstallURL](https://developer.chrome.com/docs/extensions/reference/runtime/#method-setUninstallURL) API.
+
+![redirect](readme/redirect.gif)
 
 ## Automated tests
 
