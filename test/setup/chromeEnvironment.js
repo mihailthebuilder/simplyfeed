@@ -6,9 +6,8 @@ https://github.com/applitools/jest-environment-selenium/blob/master/src/index.js
 
 // my-custom-environment
 const TemplateEnvironment = require('./templateEnvironment.js');
-const { Builder } = require('selenium-webdriver');
+const { Builder, By } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const settings = require('./settings.js');
 
 const createChromeDriver = async () => {
   // specify the extension to load
@@ -37,8 +36,10 @@ class ChromeEnvironment extends TemplateEnvironment {
     await driver.get('chrome://extensions/');
 
     const extensionId = await driver
-      .findElement(By.id('extension-id'))
-      .getText();
+      .findElement(By.css('extensions-item'))
+      .getAttribute('id');
+
+    console.log(extensionId);
 
     // set up page navigation handlers
     driver.goPage = async (url) => {
