@@ -1,9 +1,11 @@
 services:
-  web:
-    build: .
-    ports:
-      - "8080:8080"
   chrome:
     image: selenium/standalone-chrome
     ports:
       - "4444:4444"
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - chrome
