@@ -19,6 +19,7 @@ const createChromeDriver = async () => {
   let builder = await new Builder()
     .setChromeOptions(options)
     .forBrowser('chrome')
+    .usingServer('http://chrome:4444')
     .build();
 
   return builder;
