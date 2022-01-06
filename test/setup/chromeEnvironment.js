@@ -15,6 +15,7 @@ const createChromeDriver = async () => {
   let options = new chrome.Options();
   const extensionPath = require('path').join(__dirname, '../../build');
   options.addArguments('--load-extension=' + extensionPath);
+  options.addArguments('--verbose');
 
   let builder = await new Builder()
     .setChromeOptions(options)
@@ -34,12 +35,19 @@ class ChromeEnvironment extends TemplateEnvironment {
     // TODO - consider removing timeout
     await driver.manage().setTimeouts({ implicit: 120000 });
 
+    const tet = await driver.get('nba.com');
+
+    const extensionId = await driver
+      .get('chrome://extensions/')
+      .findElement(By.id('extension-id'))
+      .getText();
+
     // set up page navigation handlers
     driver.goPage = async (url) => {
       await driver.get(url);
     };
     driver.goExtensionPage = async (pageName) => {
-      const internalUrl = `chrome-extension://${settings.environments.chrome.internalExtensionId}/`;
+      const internalUrl = `chrome-extension://${extensionId}/`;
       await driver.get(internalUrl + pageName + '.html');
     };
 
