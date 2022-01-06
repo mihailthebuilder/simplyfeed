@@ -15,7 +15,7 @@
   // Set *default* container specific settings.json values on container create.
   "settings": {},
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": ["esbenp.prettier-vscode"]
+  "extensions": ["esbenp.prettier-vscode", "eamodio.gitlens"]
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
   // Uncomment the next line if you want start specific services in your Docker Compose config.
