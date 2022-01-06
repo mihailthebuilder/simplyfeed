@@ -1,4 +1,5 @@
 services:
+  # TODO - increase to 3 concurrent sessions, right now it's only 1: https://github.com/SeleniumHQ/docker-selenium#increasing-session-concurrency-per-container
   chrome:
     image: selenium/standalone-chrome
     ports:
