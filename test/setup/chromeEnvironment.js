@@ -31,15 +31,20 @@ class ChromeEnvironment extends TemplateEnvironment {
 
     let driver = await createChromeDriver();
 
-    // await driver.manage().setTimeouts({ implicit: 120000 });
+    try {
+      // await driver.manage().setTimeouts({ implicit: 120000 });
 
-    await driver.get('chrome://extensions/');
+      await driver.get('chrome://extensions/');
 
-    const extensionId = await driver
-      .findElement(By.css('extensions-item'))
-      .getAttribute('id');
+      const extensionId = await driver
+        .findElement(By.css('extensions-item'))
+        .getAttribute('id');
 
-    console.log(extensionId);
+      console.log(extensionId);
+    } catch (err) {
+      driver.quit();
+      throw err;
+    }
 
     // set up page navigation handlers
     driver.goPage = async (url) => {
