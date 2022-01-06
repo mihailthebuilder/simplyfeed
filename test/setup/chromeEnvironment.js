@@ -30,6 +30,8 @@ class ChromeEnvironment extends TemplateEnvironment {
     await super.setup();
 
     let driver = await createChromeDriver();
+
+    // TODO - consider removing timeout
     await driver.manage().setTimeouts({ implicit: 120000 });
 
     // set up page navigation handlers
