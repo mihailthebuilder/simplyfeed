@@ -32,8 +32,7 @@ class ChromeEnvironment extends TemplateEnvironment {
 
     let driver = await createChromeDriver();
 
-    // TODO - consider removing timeout
-    await driver.manage().setTimeouts({ implicit: 120000 });
+    // await driver.manage().setTimeouts({ implicit: 120000 });
 
     await driver.get('chrome://extensions/');
 
