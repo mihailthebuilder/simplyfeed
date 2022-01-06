@@ -35,10 +35,9 @@ class ChromeEnvironment extends TemplateEnvironment {
     // TODO - consider removing timeout
     await driver.manage().setTimeouts({ implicit: 120000 });
 
-    const tet = await driver.get('nba.com');
+    await driver.get('chrome://extensions/');
 
     const extensionId = await driver
-      .get('chrome://extensions/')
       .findElement(By.id('extension-id'))
       .getText();
 
