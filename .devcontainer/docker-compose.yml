@@ -36,6 +36,6 @@ services:
     # Overrides default command so things don't shut down after the process ends.
     command: /bin/sh -c "while sleep 1000; do :; done"
   chrome:
+    # Need to have files in the browser container in order to load the extension
     volumes:
-      # Update this to wherever you want VS Code to mount the folder of your project
       - .:/workspace:cached
