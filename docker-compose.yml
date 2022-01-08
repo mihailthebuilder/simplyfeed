@@ -1,0 +1,13 @@
+services:
+  # TODO - increase to 3 concurrent sessions, right now it's only 1: https://github.com/SeleniumHQ/docker-selenium#increasing-session-concurrency-per-container
+  chrome:
+    image: selenium/standalone-chrome
+    environment:
+      - SE_SESSION_REQUEST_TIMEOUT=60
+    ports:
+      - '4444:4444'
+    shm_size: '2gb'
+  web:
+    build: .
+    depends_on:
+      - chrome

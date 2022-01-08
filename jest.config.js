@@ -12,5 +12,5 @@ module.exports = {
       slowTestThreshold: 100,
     },*/
   ],
-  testTimeout: 120000,
+  // testTimeout: 120000,
 };
